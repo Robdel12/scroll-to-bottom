@@ -1,0 +1,13 @@
+{
+  "name": "puppeteer",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "test": "node index.js"
+  },
+  "devDependencies": {
+    "puppeteer": "^2.0.0"
+  }
+}
