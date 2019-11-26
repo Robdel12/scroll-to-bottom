@@ -1,0 +1,9 @@
+{
+  "name": "scroll-to-bottom",
+  "version": "1.0.0",
+  "description": "A small promise aware helper function to scroll a webpage to the bottom.",
+  "main": "index.js",
+  "repository": "https://github.com/Robdel12/scroll-to-bottom",
+  "author": "Robert DeLuca <robertdeluca19@gmail.com>",
+  "license": "MIT"
+}
