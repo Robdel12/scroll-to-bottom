@@ -5,19 +5,23 @@
  * observation)
  *
  * @param {options.frequency} 100 - How many scroll increments
- * @param {options.timing} 8 - The amout of ms to pause between scroll increments
+ * @param {options.timing} 8 - The amount of ms to pause between scroll increments
+ * @param {options.remoteWindow} `window` - The browsers `window` object
  */
-function scrollToBottom({ frequency = 100, timing = 8 } = {}) {
+function scrollToBottom({
+  frequency = 100,
+  timing = 8,
+  remoteWindow = window
+} = {}) {
   let resolve;
   let scrolls = 1;
   let deferred = new Promise(r => (resolve = r));
-  let totalScrolls = document.body.scrollHeight / frequency;
+  let totalScrolls = remoteWindow.document.body.scrollHeight / frequency;
 
   function scroll() {
     let scrollBy = totalScrolls * scrolls;
-
-    window.setTimeout(() => {
-      window.scrollTo(0, scrollBy);
+    remoteWindow.setTimeout(() => {
+      remoteWindow.scrollTo(0, scrollBy);
 
       if (scrolls < frequency) {
         scrolls += 1;
